@@ -1,0 +1,1 @@
+<?php die();?>1702284585a:1:{s:5:"datas";s:265:"auser|a:5:{s:5:"auser";s:5:"admin";s:4:"auid";s:1:"1";s:5:"level";s:1:"1";s:3:"gid";s:1:"1";s:10:"pclasstype";s:0:"";}gos|s:10:"1617028925";doyo_verify|s:32:"cc0bfa892e21e606def278e18236746e";member|a:3:{s:4:"user";s:6:"quanhc";s:2:"id";s:2:"16";s:3:"gid";s:1:"1";}";}

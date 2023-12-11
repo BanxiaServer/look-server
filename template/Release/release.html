@@ -1,57 +1,57 @@
-<script type="text/javascript" src="{$GLOBALS['TURL']}js/tablecloth.js"></script>
-	<div id="content">
-		<table cellspacing="0" cellpadding="0">
-			<tr>
-				<th>游戏名称</th>
-				<th>开区时间</th>
-				<th>游戏版本特色介绍</th>
-				<th>版本</th>
-				<th>经验</th>
-				<th>网络线路</th>
-				<th>客服QQ</th>
-				<th>游戏主页</th>
-			</tr>
-		{loop table="article" tid="1" limit="10"}			
-			<tr id="h">
-				<td id="t" width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a></td>
-				<td width="130">{fun date('Y-m-d',$v['date'])} 品牌推荐</td>
-				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
-				<td width="52">{$v['empiric']}</td>
-				<td width="66">{$v['ver']}</td>
-				<td width="60">{$v['line']}</td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		{/loop}
-		</table>
-		<div class="mark"><a>↑本站强烈推荐以上10家品牌商业奇迹mu服↑【长久 稳定 公平】</a></div>
-		<table cellspacing="0" cellpadding="0">		
-		{loop table="article" tid="2" limit="60"}			
-			<tr id="bai">
-				<td width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a><img src="{$GLOBALS['TURL']}images/r.gif" width="16" height="15" align="absbottom" /></td>
-				<td width="130">{fun date('Y-m-d',$v['date'])} 普通推荐</td>
-				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
-				<td width="52">{$v['empiric']}</td>
-				<td width="66">{$v['ver']}</td>
-				<td width="60">{$v['line']}</td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		{/loop}
-		</table>
-		<div class="mark"><a>奇迹mu ↓以下本站新服预告↓【长久 稳定 公平】</a></div>
-		<table cellspacing="0" cellpadding="0">		
-		{loop table="article" tid="3" limit="50"}			
-			<tr id="bai">
-				<td width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a><img src="{$GLOBALS['TURL']}images/new.gif" width="16" height="15" align="absbottom" /></td>
-				<td width="130">开服时间 {fun date('Y-m-d',$v['date'])}</td>
-				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
-				<td width="52">{$v['empiric']}</td>
-				<td width="66">{$v['ver']}</td>
-				<td width="60">{$v['line']}</td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		{/loop}
-		</table>	  
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/tablecloth.js"></script>
+	<div id="content">
+		<table cellspacing="0" cellpadding="0">
+			<tr>
+				<th>游戏名称</th>
+				<th>开区时间</th>
+				<th>游戏版本特色介绍</th>
+				<th>版本</th>
+				<th>经验</th>
+				<th>网络线路</th>
+				<th>客服QQ</th>
+				<th>游戏主页</th>
+			</tr>
+		{loop table="article" tid="1" limit="10"}			
+			<tr id="h">
+				<td id="t" width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a></td>
+				<td width="130">{fun date('Y-m-d',$v['date'])} 品牌推荐</td>
+				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
+				<td width="52">{$v['empiric']}</td>
+				<td width="66">{$v['ver']}</td>
+				<td width="60">{$v['line']}</td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		{/loop}
+		</table>
+		<div class="mark"><a>↑本站强烈推荐以上10家品牌商业奇迹mu服↑【长久 稳定 公平】</a></div>
+		<table cellspacing="0" cellpadding="0">		
+		{loop table="article" tid="2" limit="60"}			
+			<tr id="bai">
+				<td width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a><img src="{$GLOBALS['TURL']}images/r.gif" width="16" height="15" align="absbottom" /></td>
+				<td width="130">{fun date('Y-m-d',$v['date'])} 普通推荐</td>
+				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
+				<td width="52">{$v['empiric']}</td>
+				<td width="66">{$v['ver']}</td>
+				<td width="60">{$v['line']}</td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		{/loop}
+		</table>
+		<div class="mark"><a>奇迹mu ↓以下本站新服预告↓【长久 稳定 公平】</a></div>
+		<table cellspacing="0" cellpadding="0">		
+		{loop table="article" tid="3" limit="50"}			
+			<tr id="bai">
+				<td width="96"><a href="http://{$v['link']}" target="_blank">{fun newstr($v['title'],17)}</a><img src="{$GLOBALS['TURL']}images/new.gif" width="16" height="15" align="absbottom" /></td>
+				<td width="130">开服时间 {fun date('Y-m-d',$v['date'])}</td>
+				<td width="420"><a href="{$v['url']}" title="进入查看{$v['title']}游戏设置" target="_blank">{fun newstr($v['summary'],60)}</a></td>
+				<td width="52">{$v['empiric']}</td>
+				<td width="66">{$v['ver']}</td>
+				<td width="60">{$v['line']}</td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v['qq']}:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://{$v['link']}" target="_blank"><img border="0" src="{$GLOBALS['TURL']}images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		{/loop}
+		</table>	  
 	</div>

@@ -1,155 +1,155 @@
-/* CSS Document */
-body{
-	margin:0;
-	padding:0;
-	text-align:left;
-	background-color: #f1f1f1;
-}
-a,a:link,a:visited,a:hover,a:active {
-	text-decoration: none;
-}
-h1,.f1,h2{font-family:"Î¢ÈíÑÅºÚ","ËÎÌå",Arial; font-weight:bold;color: #444;}
-h1{
-	font-size:20px;
-	text-align:center;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.f2{font-size:14px; line-height:160%;}
-#container{
-	width:1040px;
-	background:#fff;
-	margin-top: 0;
-	margin-right: auto;
-	margin-bottom: 0;
-	margin-left: auto;
-}
-#content{margin:0 20px;}
-#t {
-	background-image: url(../images/t.gif);
-	background-repeat: no-repeat;
-	text-align: center;
-	font-weight: bold;
-	text-indent: 18px;
-}
-.mark{
-	height: 30px;
-	width: 100%;
-	line-height:30px;
-	background-image: url(../images/tr_back.gif);
-	text-align: center;
-	font-size: 12px;
-	font-weight: bold;
-	color: #FFFFFF;
-	vertical-align: middle;
-}
-.banner{
-	margin-right: auto;
-	margin-left: auto;
-	width: 1000px;
-	height: 208px;
-}
-.contentheader {
-	width:1000px;
-	height:45px;
-	background:url(../images/content_header.png) top center no-repeat;
-	margin-right: auto;
-	margin-left: auto;
-}
-.contentfooter {
-	width:1000px;
-	height:45px;
-	background:url(../images/content_footer.png) top center no-repeat;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.contentcontainer {
-	width:1000px;
-	margin-right: auto;
-	margin-left: auto;
-	background-image: url(../images/content_bg.png);
-	background-repeat: repeat-y;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	word-wrap: break-word;
-}
-.contentcontainer .text {
-	width: 870px;
-	margin-right: auto;
-	margin-left: auto;
-	word-wrap: break-word;
-	margin-bottom: 0px;
-	margin-top: 0px;
-}
-.contentcontainer .text p {
-	margin-bottom: 0px;
-}
-.contentcontainer .text .t {
-	line-height:28px;
-	border:1px solid #E7E7E7;
-	font-family:Verdana, Geneva, sans-serif;
-	border-left:0;
-	border-right:0;
-	background-color:#F3F3F3;
-	text-align: center;
-}
-
-.contentcontainer .text .home_qq {
-	height: 81px;
-	width: 300px;
-	border-left-style: none;
-}
-#keywords {
-	table-layout: fixed;
-	word-wrap: break-word;
-	overflow: hidden;
-	height: 28px;
-	width: 998px;
-	margin-right: auto;
-	margin-left: auto;
-	border-right-width: 1px;
-	border-left-width: 1px;
-	border-right-style: solid;
-	border-left-style: solid;
-	border-right-color: #FFCC66;
-	border-left-color: #FFCC66;
-	line-height: 28px;
-	text-decoration: none;
-}
-.bottom{
-	height: 50px;
-	width: 1000px;
-	background-image: url(../images/bottom.gif);
-	background-repeat: repeat-x;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;
-	padding-bottom: 0px;
-}
-.bottom strong{
-	font-size: 12px;
-	color: #FFFFFF;
-	font-weight: normal;
-	line-height: 20px;
-}
-.bottom strong a {
-	color: #FFFFFF;
-}
-
-.mainbox{
-    overflow:hidden;
-    position:relative;
-}
-.flashbox{
-   overflow:hidden;
-    position:relative;
-}
-.imagebox{
-    text-align:right;position:relative;z-index:999;
-}
-
-.bitdiv{display:inline-block;width:18px;height:18px;margin:0 10px 10px 0px;cursor:pointer;float:right;}
-.defimg{background-image:url(/template/Release/images/02.png)}
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	text-align:left;
+	background-color: #f1f1f1;
+}
+a,a:link,a:visited,a:hover,a:active {
+	text-decoration: none;
+}
+h1,.f1,h2{font-family:"Î¢ÈíÑÅºÚ","ËÎÌå",Arial; font-weight:bold;color: #444;}
+h1{
+	font-size:20px;
+	text-align:center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.f2{font-size:14px; line-height:160%;}
+#container{
+	width:1040px;
+	background:#fff;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+#content{margin:0 20px;}
+#t {
+	background-image: url(../images/t.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	font-weight: bold;
+	text-indent: 18px;
+}
+.mark{
+	height: 30px;
+	width: 100%;
+	line-height:30px;
+	background-image: url(../images/tr_back.gif);
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	vertical-align: middle;
+}
+.banner{
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+	height: 208px;
+}
+.contentheader {
+	width:1000px;
+	height:45px;
+	background:url(../images/content_header.png) top center no-repeat;
+	margin-right: auto;
+	margin-left: auto;
+}
+.contentfooter {
+	width:1000px;
+	height:45px;
+	background:url(../images/content_footer.png) top center no-repeat;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.contentcontainer {
+	width:1000px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/content_bg.png);
+	background-repeat: repeat-y;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	word-wrap: break-word;
+}
+.contentcontainer .text {
+	width: 870px;
+	margin-right: auto;
+	margin-left: auto;
+	word-wrap: break-word;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.contentcontainer .text p {
+	margin-bottom: 0px;
+}
+.contentcontainer .text .t {
+	line-height:28px;
+	border:1px solid #E7E7E7;
+	font-family:Verdana, Geneva, sans-serif;
+	border-left:0;
+	border-right:0;
+	background-color:#F3F3F3;
+	text-align: center;
+}
+
+.contentcontainer .text .home_qq {
+	height: 81px;
+	width: 300px;
+	border-left-style: none;
+}
+#keywords {
+	table-layout: fixed;
+	word-wrap: break-word;
+	overflow: hidden;
+	height: 28px;
+	width: 998px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #FFCC66;
+	border-left-color: #FFCC66;
+	line-height: 28px;
+	text-decoration: none;
+}
+.bottom{
+	height: 50px;
+	width: 1000px;
+	background-image: url(../images/bottom.gif);
+	background-repeat: repeat-x;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	padding-bottom: 0px;
+}
+.bottom strong{
+	font-size: 12px;
+	color: #FFFFFF;
+	font-weight: normal;
+	line-height: 20px;
+}
+.bottom strong a {
+	color: #FFFFFF;
+}
+
+.mainbox{
+    overflow:hidden;
+    position:relative;
+}
+.flashbox{
+   overflow:hidden;
+    position:relative;
+}
+.imagebox{
+    text-align:right;position:relative;z-index:999;
+}
+
+.bitdiv{display:inline-block;width:18px;height:18px;margin:0 10px 10px 0px;cursor:pointer;float:right;}
+.defimg{background-image:url(/template/Release/images/02.png)}
 .curimg{background-image:url(/template/Release/images/01.png)}

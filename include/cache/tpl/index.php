@@ -113,62 +113,62 @@
      box.show();
     </script>
 	</div>
-<script type="text/javascript" src="<?php echo $GLOBALS['TURL'] ?>js/tablecloth.js"></script>
-	<div id="content">
-		<table cellspacing="0" cellpadding="0">
-			<tr>
-				<th>游戏名称</th>
-				<th>开区时间</th>
-				<th>游戏版本特色介绍</th>
-				<th>版本</th>
-				<th>经验</th>
-				<th>网络线路</th>
-				<th>客服QQ</th>
-				<th>游戏主页</th>
-			</tr>
-		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(1)  order by orders desc,addtime desc,id desc limit 10");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
-			<tr id="h">
-				<td id="t" width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a></td>
-				<td width="130"><?php echo date('Y-m-d',$v['date']) ?> 品牌推荐</td>
-				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
-				<td width="52"><?php echo $v['empiric'] ?></td>
-				<td width="66"><?php echo $v['ver'] ?></td>
-				<td width="60"><?php echo $v['line'] ?></td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		<?php } ?>
-		</table>
-		<div class="mark"><a>↑本站强烈推荐以上10家品牌商业奇迹mu服↑【长久 稳定 公平】</a></div>
-		<table cellspacing="0" cellpadding="0">		
-		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(2)  order by orders desc,addtime desc,id desc limit 60");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
-			<tr id="bai">
-				<td width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a><img src="<?php echo $GLOBALS['TURL'] ?>images/r.gif" width="16" height="15" align="absbottom" /></td>
-				<td width="130"><?php echo date('Y-m-d',$v['date']) ?> 普通推荐</td>
-				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
-				<td width="52"><?php echo $v['empiric'] ?></td>
-				<td width="66"><?php echo $v['ver'] ?></td>
-				<td width="60"><?php echo $v['line'] ?></td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		<?php } ?>
-		</table>
-		<div class="mark"><a>奇迹mu ↓以下本站新服预告↓【长久 稳定 公平】</a></div>
-		<table cellspacing="0" cellpadding="0">		
-		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(3)  order by orders desc,addtime desc,id desc limit 50");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
-			<tr id="bai">
-				<td width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a><img src="<?php echo $GLOBALS['TURL'] ?>images/new.gif" width="16" height="15" align="absbottom" /></td>
-				<td width="130">开服时间 <?php echo date('Y-m-d',$v['date']) ?></td>
-				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
-				<td width="52"><?php echo $v['empiric'] ?></td>
-				<td width="66"><?php echo $v['ver'] ?></td>
-				<td width="60"><?php echo $v['line'] ?></td>
-				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
-				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
-			</tr>
-		<?php } ?>
-		</table>	  
+<script type="text/javascript" src="<?php echo $GLOBALS['TURL'] ?>js/tablecloth.js"></script>
+	<div id="content">
+		<table cellspacing="0" cellpadding="0">
+			<tr>
+				<th>游戏名称</th>
+				<th>开区时间</th>
+				<th>游戏版本特色介绍</th>
+				<th>版本</th>
+				<th>经验</th>
+				<th>网络线路</th>
+				<th>客服QQ</th>
+				<th>游戏主页</th>
+			</tr>
+		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(1)  order by orders desc,addtime desc,id desc limit 10");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
+			<tr id="h">
+				<td id="t" width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a></td>
+				<td width="130"><?php echo date('Y-m-d',$v['date']) ?> 品牌推荐</td>
+				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
+				<td width="52"><?php echo $v['empiric'] ?></td>
+				<td width="66"><?php echo $v['ver'] ?></td>
+				<td width="60"><?php echo $v['line'] ?></td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		<?php } ?>
+		</table>
+		<div class="mark"><a>↑本站强烈推荐以上10家品牌商业奇迹mu服↑【长久 稳定 公平】</a></div>
+		<table cellspacing="0" cellpadding="0">		
+		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(2)  order by orders desc,addtime desc,id desc limit 60");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
+			<tr id="bai">
+				<td width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a><img src="<?php echo $GLOBALS['TURL'] ?>images/r.gif" width="16" height="15" align="absbottom" /></td>
+				<td width="130"><?php echo date('Y-m-d',$v['date']) ?> 普通推荐</td>
+				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
+				<td width="52"><?php echo $v['empiric'] ?></td>
+				<td width="66"><?php echo $v['ver'] ?></td>
+				<td width="60"><?php echo $v['line'] ?></td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		<?php } ?>
+		</table>
+		<div class="mark"><a>奇迹mu ↓以下本站新服预告↓【长久 稳定 公平】</a></div>
+		<table cellspacing="0" cellpadding="0">		
+		<?php $vn=0;$tablev=syClass("syModel")->syCache(3600)->findSql("select id,tid,sid,title,style,trait,gourl,addtime,hits,htmlurl,htmlfile,litpic,orders,mrank,mgold,isshow,keywords,description,summary,date,empiric,ver,line,qq,link from dy_article a left join dy_article_field b on (a.id=b.aid) where isshow=1 and tid in(3)  order by orders desc,addtime desc,id desc limit 50");foreach($tablev as $v){ $v["tid_leafid"]=$sy_class_type->leafid($v["tid"]);$v["n"]=$vn=$vn+1; $v["url"]=html_url("article",$v); $v["title"]=stripslashes($v["title"]); $v["description"]=stripslashes($v["description"]); ?>			
+			<tr id="bai">
+				<td width="96"><a href="http://<?php echo $v['link'] ?>" target="_blank"><?php echo newstr($v['title'],17) ?></a><img src="<?php echo $GLOBALS['TURL'] ?>images/new.gif" width="16" height="15" align="absbottom" /></td>
+				<td width="130">开服时间 <?php echo date('Y-m-d',$v['date']) ?></td>
+				<td width="420"><a href="<?php echo $v['url'] ?>" title="进入查看<?php echo $v['title'] ?>游戏设置" target="_blank"><?php echo newstr($v['summary'],60) ?></a></td>
+				<td width="52"><?php echo $v['empiric'] ?></td>
+				<td width="66"><?php echo $v['ver'] ?></td>
+				<td width="60"><?php echo $v['line'] ?></td>
+				<td width="76"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $v['qq'] ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['qq'] ?>:46" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				<td><a href="http://<?php echo $v['link'] ?>" target="_blank"><img border="0" src="<?php echo $GLOBALS['TURL'] ?>images/link.gif" alt="进入游戏" title="进入游戏" /></a></td>
+			</tr>
+		<?php } ?>
+		</table>	  
 	</div>
 	<div id="content">
 		<div id="index_news">
