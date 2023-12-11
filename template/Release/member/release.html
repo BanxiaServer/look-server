@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<link href="{$GLOBALS['TURL']}style/css.css" rel="stylesheet" type="text/css" />
+<script src="{$GLOBALS['WWW']}include/js/jquery.js" type="text/javascript"></script>
+<script src="{$GLOBALS['WWW']}include/js/dyfrom.js" type="text/javascript"></script>
+<script src="{$GLOBALS['WWW']}include/js/DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="{$GLOBALS['WWW']}include/js/xheditor/xheditor-zh-cn.min.js" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript">
+function postform(){
+	value=$("#title").val();
+	if(!dyfrom_null(value)||!dyfrom_max(value, 100)){
+		alert('标题不能为空，并且不能大于100个字符');return false;
+	}
+	value=$("#body1").val();
+	if(!dyfrom_null(value)){
+		alert('内容不能为空');return false;
+	}
+{if($GLOBALS['G_DY']['vercode']==1)}
+	value=$("#vercode").val();
+	if(dyfrom_ajax("{$GLOBALS['WWW']}index.php?c=member&a=rules&r=2","vercode="+value)=='false'){
+		alert('验证码输入错误');return false;
+	}
+{/if}
+	$("#rform").submit();
+}
+$(function(){
+	$("#tid option[class='hidden']").remove();
+	editors=$('#body1').xheditor({cleanPaste:0,html5Upload:false,upLinkUrl:'!doyo.php?c=uploads&a=loadup&fileover=2&isfiles=filedata',upImgUrl:'!doyo.php?c=uploads&a=loadup&fileover=2&multi=1&isfiles=filedata&fileExt=*.jpg;*.jpeg;*.gif;*.png',upFlashUrl:'!doyo.php?c=uploads&a=loadup&fileover=2&isfiles=filedata',upMediaUrl:'!doyo.php?c=uploads&a=loadup&fileover=2&isfiles=filedata'});
+	fieldsinfo();
+	$("#tid").change(function(){
+		fieldsinfo();
+	});
+	$("#submit").click(function(check){ 
+		if($("#tid").val() == ''||$("#title").val() == ''){ 
+			alert("请选择栏目和输入标题");  
+			check.preventDefault();
+		}else{
+			<?php if(syExt('site_html')==1){ ?>
+			winboxgo('<img src="include/js/uploadify/loading.gif" /> <strong>正在提交，并生成静态文件，请稍后...</strong>','b');
+			<?php }else{ ?>
+			if($("#all_down_images").attr('checked') == true){
+				winboxgo('<img src="include/js/uploadify/loading.gif" /> <strong>正在下载远程图片，请稍后...</strong>','b');
+			}
+			<?php } ?>
+			$("#submit").css("display","none");
+		}
+	}); 
+});
+function fieldsinfo(){
+	$("#fieldsinfo").empty();
+	$("#fieldsinfo").append("<dl><dt>&nbsp;</dt><dd><img src='include/js/uploadify/loading.gif' /></dd>");
+	$.ajax({
+		url: 'doyo.php?c=a_fields&a=info',type: 'post',
+		//async:false,
+		cache: false,
+		data: "tid="+$("#tid").attr("value")+"&molds=<?php echo $molds;?>&id=<?php echo $carray['id'];?>",
+		success: function(html){
+			$("#fieldsinfo").empty();
+			$("#fieldsinfo").append(html);
+		}
+	});
+}
+function delfieldall(fieldid){
+	$("#"+fieldid).remove();
+}
+</script>
+</head>
+
+<body>
+{include="top.html"}
+<div class="wpm">
+  <div class="tab1 tab1b main">
+    <div class="l">
+      <div class="columnc"><h2>会员中心</h2></div>
+      <div class="columncl">
+		{include="member/menu.html"}
+      </div>
+    </div>
+    <div class="r">
+    <div class="content">
+       <div class="position">当前位置：{$type['classname']}  &gt;  {if($id)}修改内容{else}发布内容{/if}</div>
+       <div class="member_f">
+<form action="index.php?c=member&a=release&tid={$type['tid']}&hand={$hand}&id={$id}&go=1" method="post" id="rform">
+       {foreach $fields as $v}
+       <dl><dt>{$v['name']}</dt><dd>{$v['input']}</dd>{if($v['m'])}<dd class="m">{$v['m']}</dd>{/if}</dl>
+       {/foreach}
+{if($GLOBALS['G_DY']['vercode']==1)}  
+<script type="text/javascript">
+function newvercode(){
+	document.getElementById("vercodeimg").src="{$GLOBALS['WWW']}include/vercode.php?a="+Math.random();
+}
+</script>
+       <dl><dt>验证码：</dt><dd><input type="text" name="vercode" id="vercode" class="inp" style="width:80px;"/></dd><dd><img src="{$GLOBALS['WWW']}include/vercode.php" id="vercodeimg" width="60" height="25" onclick="newvercode();" style="cursor:pointer;" /></dd><dd class="m"></dd></dl>
+{/if}
+       <dl style="border:0;"><dt>&nbsp;</dt><dd><input type="button" value="{if($id)}提交修改{else}立即发布{/if}" onclick="postform()" class="btnbig" /></dd></dl>
+</form>
+       </div>
+    </div>
+    </div>
+  </div>
+  <div class="tab12 mban"></div>
+</div>
+</body>
+</html>

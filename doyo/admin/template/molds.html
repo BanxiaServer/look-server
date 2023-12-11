@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="doyo/admin/template/style/admin.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+function getok(url,name){
+    if(confirm("你确认要安装["+name+"]吗？")){window.location.href = url;}
+}
+</script>
+</head>
+
+<body>
+<div class="maintop">当前位置：<?php echo $toptxt ?></div>
+<?php if($a=='edit'){ ?>
+<div class="main">
+	<div class="info">
+    <form action="?c=<?php echo $Get_c; ?>&a=<?php echo $postgo ?>&run=1" method="post">
+    <input name="mid" type="hidden" value="<?php echo $d['mid'] ?>" />
+    <dl><dt>频道名称：</dt><dd><input name="moldname" type="text" class="int" value="<?php echo $d['moldname'] ?>" /></dd></dl>
+    <dl><dt>频道版本：</dt><dd><?php echo $d['version']; ?></dd></dl>
+    <dl><dt>&nbsp;</dt><dd class="t">以下模板放于<?php echo '/template/'.syExt('view_themes').'/'.$d['molds']; ?>目录中</dd></dl>
+    <dl><dt>聚合模板：</dt><dd><input name="t_index" type="text" class="int" value="<?php echo $d['t_index']; ?>" /></dd><dd class="t">留空则以频道设置为准</dd></dl>
+    <dl><dt>列表模板(文字)：</dt><dd><input name="t_list" type="text" class="int" value="<?php echo $d['t_list']; ?>" /></dd><dd class="t">留空则以频道设置为准</dd></dl>
+    <dl><dt>列表模板(图片)：</dt><dd><input name="t_listimg" type="text" class="int" value="<?php echo $d['t_listimg']; ?>" /></dd><dd class="t">留空则以频道设置为准</dd></dl>
+    <dl><dt>介绍模板：</dt><dd><input name="t_listb" type="text" class="int" value="<?php echo $d['t_listb']; ?>" /></dd><dd class="t">留空则以频道设置为准</dd></dl>
+    <dl><dt>内容模板：</dt><dd><input name="t_content" type="text" class="int" value="<?php echo $d['t_content']; ?>" /></dd><dd class="t">留空则以频道设置为准</dd></dl>
+    <dl><dt>频道状态：</dt><dd><input <?php if($d['isshow']==1 || $d['isshow']==''){echo 'checked="checked"';} ?> name="isshow" type="radio" value="1" />开启 <input <?php if($d['isshow']=='0'){echo 'checked="checked"';} ?> name="isshow" type="radio" value="0" />关闭</dd></dl>
+    <dl><dt>排序：</dt><dd><input name="orders" type="text" class="int" style="width:30px;" value="<?php if($carray!=''){echo $carray['orders'];}else{echo '0';} ?>" /></dd><dd class="t">越大越靠前</dd></dl>
+    <dl><dt>&nbsp;</dt><dd><input type="submit" value="提 交" class="btnbig" /></dd></dl>
+    </form>
+    </div>
+</div>
+<?php } ?>
+<?php if($a==''){ ?>
+<div class="main">
+<table width="100%" class="tablist">
+  <tr class="trbg">
+    <td width="40">ID</td>
+    <td>频道名称</td>
+    <td>频道标识</td>
+    <td width="220">设置</td>
+    <td width="90">状态</td>
+    <td width="130">操作</td>
+  </tr>
+<?php foreach($lists as $v){ ?>
+  <tr>
+    <td><?php echo $v['mid']; ?></td>
+    <td class="tdleft"><a href="?c=<?php echo $Get_c; ?>&a=edit&mid=<?php echo $v['mid']; ?>"><?php echo $v['moldname']; ?></a></td>
+    <td><?php echo $v['molds']; ?></td>
+    <td><a href="?c=a_traits&molds=<?php echo $v['molds']; ?>">推荐属性管理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?c=a_fields&molds=<?php echo $v['molds']; ?>">字段管理</a></td>
+    <td>开启</td>
+    <td><a href="?c=<?php echo $Get_c; ?>&a=edit&mid=<?php echo $v['mid']; ?>">编辑</a></td>
+  </tr>
+<?php } ?>
+</table>
+<br />
+<table width="100%" class="tablist">
+    <tr class="trbg">
+      <td>&nbsp;已关闭频道</td>
+      <td>频道标识</td>
+      <td width="100">状态</td>
+      <td width="130">操作</td>
+    </tr>
+  <?php foreach($lists_no as $v){ ?>
+    <tr>
+      <td class="tdleft"><?php echo $v['moldname']; ?></td>
+      <td><?php echo $v['molds']; ?></td>
+      <td><span style="color:#C00">关闭</span></td>
+      <td><a href="?c=<?php echo $Get_c; ?>&a=edit&mid=<?php echo $v['mid']; ?>">编辑</a></td>
+    </tr>
+  <?php } ?>
+</table>
+</div>
+<?php } ?>
+</body>
+</html>

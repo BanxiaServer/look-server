@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /include
+Disallow: /doyo
+Disallow: /template
+Disallow: /uploads
+Disallow: /xml
+Disallow: /doyo.php
+Disallow: /config.php

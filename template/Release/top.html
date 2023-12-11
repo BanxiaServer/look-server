@@ -1,0 +1,87 @@
+<style type="text/css">
+<!--
+#top {
+	background-image: url(/template/Release/images/top_11.gif);
+	background-repeat: repeat-x;
+	height: 26px;
+	width: 100%;
+}
+#top .h{
+	height: 26px;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 26px;
+}
+#top .h .info{
+	float: left;
+	line-height: 24px;
+	height: 24px;
+}
+#top .h .release-btn{
+	float: right;
+	font-size: 12px;
+}
+#top .h a{
+	font-size: 12px;
+	text-decoration: none;
+	padding-right: 10px;
+}
+-->
+</style>
+<div id="top">
+	<div class="h">
+	<div class="info">
+	<script>
+	var marqueeContent=new Array();   //滚动新闻
+	marqueeContent[0]='<img src="{$GLOBALS['TURL']}images/info.gif" /><a>{fun labelcus(5,'body')}</a><br>';
+	marqueeContent[1]='<img src="{$GLOBALS['TURL']}images/info.gif" /><a>{fun labelcus(6,'body')}</a><br>';
+	marqueeContent[2]='<img src="{$GLOBALS['TURL']}images/info.gif" /><a>{fun labelcus(7,'body')}</a><br>';
+	marqueeContent[3]='<img src="{$GLOBALS['TURL']}images/info.gif" /><a>{fun labelcus(8,'body')}</a><br>';	
+	var marqueeInterval=new Array();  //定义一些常用而且要经常用到的变量
+	var marqueeId=0;
+	var marqueeDelay=10000;
+	var marqueeHeight=24;
+	//接下来的是定义一些要使用到的函数
+	function initMarquee() {
+		var str=marqueeContent[0];
+		document.write('<div id=marqueeBox style="overflow:hidden;height:'+marqueeHeight+'px" onmouseover="clearInterval(marqueeInterval[0])" onmouseout="marqueeInterval[0]=setInterval(\'startMarquee()\',marqueeDelay)"><div>'+str+'</div></div>');
+		marqueeId++;
+		marqueeInterval[0]=setInterval("startMarquee()",marqueeDelay);
+		}
+	function startMarquee() {
+		var str=marqueeContent[marqueeId];
+			marqueeId++;
+		if(marqueeId>=marqueeContent.length) marqueeId=0;
+		if(marqueeBox.childNodes.length==1) {
+			var nextLine=document.createElement('DIV');
+			nextLine.innerHTML=str;
+			marqueeBox.appendChild(nextLine);
+			}
+		else {
+			marqueeBox.childNodes[0].innerHTML=str;
+			marqueeBox.appendChild(marqueeBox.childNodes[0]);
+			marqueeBox.scrollTop=0;
+			}
+		clearInterval(marqueeInterval[1]);
+		marqueeInterval[1]=setInterval("scrollMarquee()",24);
+		}
+	function scrollMarquee() {
+		marqueeBox.scrollTop++;
+		if(marqueeBox.scrollTop%marqueeHeight==(marqueeHeight-1)){
+			clearInterval(marqueeInterval[1]);
+			}
+		}
+	initMarquee();
+	</script>
+	</div>		
+	 <div class="release-btn">
+      {if(empty($_SESSION['member']))}
+      <img src="{$GLOBALS['TURL']}images/home.gif" /><a href="{$GLOBALS['WWW']}index.php?c=member&a=reg">注册发布</a><img src="{$GLOBALS['TURL']}images/icon_2.gif" /><a href="{$GLOBALS['WWW']}index.php?c=member&a=login">自助免费发布</a>
+      {else}
+      欢迎您:{$_SESSION['member']['user']}
+      <img src="{$GLOBALS['TURL']}images/icon_2.gif" /><a href="{$GLOBALS['WWW']}index.php?c=member">发布中心</a><img src="{$GLOBALS['TURL']}images/home.gif" /><a href="{$GLOBALS['WWW']}index.php?c=member&a=out">退出登录</a>
+      {/if}
+	  </div>
+	</div>
+</div>

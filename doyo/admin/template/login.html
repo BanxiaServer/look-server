@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>私服发布网站系统-后台登录</title>
+<link href="doyo/admin/template/style/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#F4F7F9;">
+<div class="login"><p class="pl"></p>
+<div class="l"></div>
+  <div class="c">
+	<form action="?c=login&a=go" method="post">
+    <div class="to"><span class="tol"><a href="http://union.akmu.net" target="_blank"></a></span><span class="tor">私服发布网站系统</span></div>
+    <div class="in">
+    <dl><dt>用户名</dt><dd><input name="adminuser" type="text" style="width:150px;" /></dd><dd class="e"></dd></dl>
+    <dl><dt>密　码</dt><dd><input name="adminpass" type="password" style="width:150px;" /></dd><dd class="e"></dd></dl>
+    <?php if($GLOBALS['G_DY']['vercode']==1){?>
+	<script type="text/javascript">
+    function newvercode(){
+        document.getElementById("vercodeimg").src="include/vercode.php?a="+Math.random();
+    }
+    </script>
+    <dl><dt>验证码</dt><dd><input name="vercode" type="text" style="width:80px;" /></dd><dd style="padding-top:5px;"><img src="include/vercode.php" id="vercodeimg" width="58" height="25" onclick="newvercode();" style="cursor:pointer;" /></dd><dd class="e"><a href="#" onclick="newvercode();">换一张</a></dd></dl>
+    <?php }?>
+    </div>
+    <div class="su"><span><input class="go" type="submit" value="" /></span></div>
+	</form>
+  </div>
+<div class="r"></div>
+<p class="pr"></p></div>
+</body>
+</html>

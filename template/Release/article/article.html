@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$article['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$article['keywords']}" />
+<meta name="description" content="{$article['description']}" />
+<link href="{$GLOBALS['TURL']}style/tablecloth.css" rel="stylesheet" type="text/css" />
+<link href="{$GLOBALS['TURL']}style/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/pptBox.js"></script>
+</head>
+
+<body>
+<div id="container">
+{include="top.html"}
+{include="banner.html"}
+<div class="contentheader"></div>
+<div class="contentcontainer">
+<div class="text">
+<div><h1>{$article['title']}</h1></div>
+<div class="t">发布时间：{fun date('Y-m-d H:i:s',$article['addtime'])} 点击：<script src="{$GLOBALS['WWW']}index.php?c=article&a=hits&id={$article['id']}" type="text/javascript"></script></div>
+<div class="f2">{$article['body']}</div>
+<table class="home_qq" width="300" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="http://{$article['link']}"><img src="{$GLOBALS['TURL']}images/home_icos.png" width="82" height="62" border="0" /></a></td>
+    <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$article['qq']}&site=qq&menu=yes"><img src="{$GLOBALS['TURL']}images/qq_icos.png" width="82" height="71" border="0" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://{$article['link']}">进入{fun newstr($article['title'],17)}</a></td>
+    <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$article['qq']}&site=qq&menu=yes">游戏客服交谈</a></td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="contentfooter"></div>
+{include="bottom.html"}
+</div>
+</body>
+</html>

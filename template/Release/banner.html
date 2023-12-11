@@ -1,0 +1,14 @@
+	<div class="banner">
+	<script>
+     var box =new PPTBox();
+     box.width = 1000; //宽度
+     box.height = 208;//高度
+     box.autoplayer = 3;//自动播放间隔时间
+
+     //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
+     {loop table="ads" taid="1" limit="6"}
+	 box.add({"url":"{$v['adfile']}","href":"{$v['gourl']}","title":"{$v['name']}"})
+	 {/loop}
+     box.show();
+    </script>
+	</div>

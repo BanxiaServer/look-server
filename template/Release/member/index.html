@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心-{$GLOBALS['S']['title']}</title>
+<link href="{$GLOBALS['TURL']}style/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+{include="top.html"}
+<div class="wpm">
+  <div class="tab1 tab1b main">
+    <div class="l">
+      <div class="columnc"><h2>会员中心</h2></div>
+      <div class="columncl">
+		{include="member/menu.html"}
+      </div>
+    </div>
+    <div class="r">
+    <div class="content">
+       <div class="position">当前位置：会员中心</div>
+       <div class="c f2">
+	   <strong>{$_SESSION['member']['user']}</strong> 亲！欢迎您发布游戏信息，我们将在一个工作日内审核通过，您也可以联系管理员加速审核，祝您工作愉快！<br />
+	   <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={fun labelcus(4,'body')}&site=qq&menu=yes">QQ联系管理员加速审核<img border="0" src="http://wpa.qq.com/pa?p=2:{fun labelcus(4,'body')}:47" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+	   </div>
+    </div>
+    </div>
+  </div>
+  <div class="tab12 mban"></div>
+</div>
+</body>
+</html>

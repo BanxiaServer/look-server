@@ -1,0 +1,28 @@
+	<div id="content">
+		<div id="index_news">
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<th>站内新闻</th>
+					<th>行业动态</th>
+					<th>相关文章</th>
+				</tr>		
+				<tr id="bai">
+					<td width="333">
+				{loop table="article" tid="4" limit="10"}
+					<li><a href="{$v['url']}" target="_blank"><span>[{fun date('Y-m-d',$v['addtime'])}]</span><span>{fun newstr($v['title'],50)}</span></a></li>
+				{/loop}
+					</td>
+					<td width="333">
+				{loop table="article" tid="5" limit="10"}
+					<li><a href="{$v['url']}" target="_blank"><span>[{fun date('Y-m-d',$v['addtime'])}]</span><span>{fun newstr($v['title'],50)}</span></a></li>
+				{/loop}
+					</td>
+					<td width="333">
+				{loop table="article" tid="6" limit="10"}
+					<li><a href="{$v['url']}" target="_blank"><span>[{fun date('Y-m-d',$v['addtime'])}]</span><span>{fun newstr($v['title'],50)}</span></a></li>
+				{/loop}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>		

@@ -1,0 +1,108 @@
+/* 
+
+	TableCloth	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+*/
+
+/* general styles */
+
+
+table{
+	width:100%;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFCC66;
+}
+th, td{
+	text-align:left;
+}
+th{
+	background:#328aa4 url(../images/tr_back.gif) repeat-x;
+	color:#FFFFFF;
+	height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+#index_news th {
+	background:#328aa4 url(../images/tr_back.gif) repeat-x;
+	color:#FFFFFF;
+	height: 30px;
+	font-size: 14px;
+	text-align: left;
+	padding-left: 4px;
+	font-family: "ËÎÌו";
+}
+#index_news li {
+	list-style-type: none;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 12px;
+}
+#index_news span {
+	padding-right: 10px;
+}
+#index_news a:hover {
+	text-decoration: blink;
+	color: #FF0000;
+}
+#h td{
+	font-size: 12px;
+	height: 30px;
+	padding-left: 4px;	
+	background-color: #F3E107;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FFCC66;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFCC66;
+	color: #FF3300;
+}
+#h td a,a:link,a:visited,a:hover,a:active {
+	text-decoration: none;
+	color: #FF3300;
+}
+#bai td a,a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+	color: #000000;
+}
+#bai td{
+	font-size: 12px;
+	height: 28px;
+	padding-left: 4px;
+	background-color: #FFFFFF;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FFCC66;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFCC66;
+}
+
+/* tablecloth styles */
+
+
+
+#h th.over, tr.even th.over, tr.odd th.over{background:#4a98af;}
+#h th.down, tr.even th.down, tr.odd th.down{background:#bce774;}
+#h th.selected, tr.even th.selected, tr.odd th.selected{}
+
+#h td.over, tr.even td.over, tr.odd td.over{background:#ecfbd4;}
+#h td.down, tr.even td.down, tr.odd td.down{background:#bce774;color:#fff;}
+#h td.selected, tr.even td.selected, tr.odd td.selected{background:#bce774;color:#555;}
+
+/* use this if you want to apply different styleing to empty table cells*/
+#h td.empty, tr.odd td.empty, tr.even td.empty{background:#fff;}
+
+
+#bai th.over, tr.even th.over, tr.odd th.over{background:#4a98af;}
+#bai th.down, tr.even th.down, tr.odd th.down{background:#bce774;}
+#bai th.selected, tr.even th.selected, tr.odd th.selected{}
+
+#bai td.over, tr.even td.over, tr.odd td.over{background:#ecfbd4;}
+#bai td.down, tr.even td.down, tr.odd td.down{background:#bce774;color:#fff;}
+#bai td.selected, tr.even td.selected, tr.odd td.selected{background:#bce774;color:#555;}
+
+/* use this if you want to apply different styleing to empty table cells*/
+#bai td.empty, tr.odd td.empty, tr.even td.empty{background:#fff;}
